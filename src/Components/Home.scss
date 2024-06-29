@@ -1,0 +1,16 @@
+main{
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  figure{
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+  }
+  .test-position{
+    position: relative;
+    color: white;
+    bottom: 14vh;
+  }
+}
+

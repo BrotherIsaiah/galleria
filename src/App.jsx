@@ -2,14 +2,18 @@ import "./Components/Header";
 import "./App.css";
 import TheHeader from "./Components/Header";
 import Gallery from "./Components/Home";
+import {
+  createBrowserRouter, RouterProvider,
+} from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <TheHeader />
-      <Gallery />
-    </>
-  );
+  const router = createBrowserRouter ([
+    {
+      path: "/",
+      element: <Gallery/>
+    }
+  ])
+ 
 }
 
 export default App;
