@@ -2,8 +2,7 @@ import data from "../data.json";
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 
-
-export default function Gallery() {
+export default function GalleryDetails() {
   const [galleryData, setGalleryData] = useState([]);
   useEffect(() => {
     setGalleryData(data);
@@ -17,13 +16,19 @@ export default function Gallery() {
     <>
       <main>
         {galleryData.map((item) => (
-          <figure key={item.name}>
-            <img src={item.images.thumbnail} alt={item.name} />
-            <figcaption className="test-position">
-              <h2>{item.name}</h2>
-              <p>{item.artist.name}</p>
-            </figcaption>
-          </figure>
+          <>
+          <div>
+          <img src={item.images.thumbnail} alt={item.name} />
+            <h2>{item.name}</h2>
+            <p>{item.artist.name}</p>
+            <img src={item.artist.image} alt="" />
+          </div>
+            
+            <div>
+            <p>{item.description}</p>
+            <p>{item.year}</p>
+            </div>
+          </>
         ))}
       </main>
     </>
